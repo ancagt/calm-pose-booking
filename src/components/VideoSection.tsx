@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const videos = [
   {
@@ -28,15 +29,17 @@ const videos = [
 ];
 
 export const VideoSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="videos" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Practice at Home
+            {t('videos.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Enjoy our curated collection of yoga videos, perfect for practitioners of all levels
+            {t('videos.subtitle')}
           </p>
         </div>
         

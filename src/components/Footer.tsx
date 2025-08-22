@@ -1,6 +1,10 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
-    <footer className="bg-sage text-white py-12">
+    <footer id="contact" className="bg-sage text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
@@ -25,37 +29,36 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Classes</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2 text-white/80">
-              <li><a href="#" className="hover:text-white transition-colors">Hatha Yoga</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Vinyasa Flow</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Restorative</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Private Sessions</a></li>
+              <li><a href="#classes" className="hover:text-white transition-colors">{t('footer.classes')}</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">{t('footer.about')}</a></li>
+              <li><a href="#videos" className="hover:text-white transition-colors">{t('footer.videos')}</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">{t('footer.booking')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2 text-white/80">
-              <li><a href="#" className="hover:text-white transition-colors">Video Library</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Meditation Guides</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Wellness Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Schedule</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.contact')}</h4>
             <div className="space-y-2 text-white/80 text-sm">
-              <p>📧 hello@calmpose.com</p>
-              <p>📞 (555) 123-YOGA</p>
-              <p>📍 123 Serenity Lane<br />Peaceful City, PC 12345</p>
+              <p>📧 {t('footer.email')}</p>
+              <p>📞 {t('footer.phone')}</p>
+              <p>📍 {t('footer.address')}</p>
+            </div>
+          </div>
+          
+          <div>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.followUs')}</h4>
+            <div className="space-y-2 text-white/80 text-sm">
+              <p>Facebook</p>
+              <p>Instagram</p>
+              <p>YouTube</p>
             </div>
           </div>
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-          <p>&copy; 2024 Calm Pose. All rights reserved. Find your inner peace.</p>
+          <p>&copy; 2024 Calm Pose. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>
